@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('https://cdn.pixabay.com/photo/2022/03/23/21/27/road-7087957_1280.jpg') no-repeat center center/cover;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 0;
+}
+
+.recovery {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.298);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.recovery h2 {
+    font-size: 1.2em;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.recovery .inputBx {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.recovery .inputBx input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    background: rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+.recovery .inputBx input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.recovery .inputBx input:focus {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.recovery .inputBx input[type="submit"] {
+    background-color: #3b6dd0;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    transition: 0.3s;
+}
+
+.recovery .inputBx input[type="submit"]:hover {
+    background-color: #2a52a0;
+}
+
+.footer-links {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 0.9em;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #3b6dd0;
+}
+
+#loading {
+    display: none;
+    margin-top: 15px;
+    text-align: center;
+}
+
+#loading svg {
+    width: 50px;
+    height: 50px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+img {
+    max-width: 150px;
+    width: 40%;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px;
+
+} 

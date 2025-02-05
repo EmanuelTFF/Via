@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/login.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="login">
+        <img src="../assets/img/logo3.png" alt="logo">
+        <h2>Login</h2>
+        <form id="loginForm" action="" method="POST">
+            <div class="inputBx">
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="inputBx">
+                <input type="password" name="senha" placeholder="Senha" required>
+            </div>
+            <div class="inputBx">
+                <input type="submit" value="Entrar" name="login">
+            </div>
+            <div class="footer-links">
+                <a href="../index.html">Voltar para o início</a>
+                <span>|</span>
+                <a href="singup.html">Cadastro</a>
+                <span>|</span>
+                <a href="recovery.html">
+                    <i class="fa-solid fa-lock"></i> Recuperar senha
+                </a>
+            </div>
+        </form>
+
+        <!-- SVG Loading Animation -->
+        <div id="loading">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                <circle cx="25" cy="25" r="20" stroke="#3b6dd0" stroke-width="4" fill="none" stroke-linecap="round">
+                    <animate attributeName="stroke-dasharray" from="0, 150" to="150, 0" dur="1s"
+                        repeatCount="indefinite" />
+                    <animate attributeName="stroke-dashoffset" from="0" to="150" dur="1s" repeatCount="indefinite" />
+                </circle>
+            </svg>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById("loginForm");
+        const loader = document.getElementById("loading");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault(); // Previne o envio padrão para fins de teste
+
+            // Exibe o loader
+            loader.style.display = "block";
+
+            // Simula o carregamento por 2 segundos
+            setTimeout(() => {
+                form.submit(); // Envia o formulário após o efeito
+            }, 2000);
+        });
+    </script>
+</body>
+
+</html>

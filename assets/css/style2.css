@@ -282,35 +282,39 @@ html {
     padding: 10px 0;
 }
 
+/* Estilos gerais da navegação */
 .nav {
     display: flex;
-    justify-content: space-between; /* Mantém a logo e os itens bem distribuídos */
+    justify-content: space-between;
     align-items: center;
-
+    padding: 10px 20px; /* Adiciona um pouco de espaço */
 }
 
+/* Logo */
+.nav img {
+    height: 80px;
+    width: auto;
+    max-width: 180px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Menu padrão */
 .nav__menu {
     display: flex;
     align-items: center;
 }
 
-.nav img {
-    height: 80px; /* Ajuste conforme necessário */
-    width: auto; /* Mantém a proporção correta */
-    max-width: 180px; /* Evita que a logo fique muito grande */
-    object-fit: contain; /* Evita distorção */
-    display: block;
-}
-
+/* Lista de navegação */
 .nav__list {
     display: flex;
     gap: 20px;
     list-style: none;
 }
 
+/* Links da navegação */
 .nav__link {
     color: #333;
-    /* 🔹 Mantém o texto escuro para melhor visibilidade */
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;
@@ -320,62 +324,77 @@ html {
 .nav__link:hover {
     color: #2e537a;
     text-decoration: none;
-    /* 🔹 Efeito hover azul */
 }
 
+/* Ícones do menu mobile */
 .nav__toggle,
 .nav__close {
-    font-size: 24px;
+    font-size: 28px;
     cursor: pointer;
     display: none;
-    /* 🔹 Ocultar no desktop */
 }
 
-/* 🔹 Responsividade para telas menores */
+/* 🔹 Estilos para telas menores */
 @media (max-width: 768px) {
     .nav__menu {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 250px;
+        width: 80%; /* Ajustado para 80% da tela */
+        max-width: 300px;
         height: 100vh;
         background: white;
+        display: flex;
         flex-direction: column;
-        top: -20px;
+        justify-content: center; /* Centraliza os itens */
+        align-items: center;
+        gap: 20px;
         box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
-        transition: right 0.3s;
+        transition: right 0.3s ease-in-out;
+        padding: 20px;
     }
 
+    /* Quando o menu está ativo */
     .nav__menu.active {
         right: 0;
     }
 
+    /* Lista de navegação */
     .nav__list {
         flex-direction: column;
-        gap: 15px;
+        gap: 25px;
+        text-align: center;
     }
 
+    /* Links */
+    .nav__link {
+        font-size: 18px; /* Aumentado para melhor toque */
+    }
+
+    /* Botão de abrir */
     .nav__toggle {
         display: block;
+        font-size: 30px;
+        color: #333;
     }
 
+    /* Botão de fechar */
     .nav__close {
         display: block;
-        align-self: flex-end;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 30px;
+        color: #333;
     }
 
-    .nav__toggle {
-        display: block;
-        font-size: 24px;
-        color: #333;
-        /* 🔹 Sempre escuro */
-        cursor: pointer;
-    }
+    /* Reduz a logo em telas menores */
     .nav img {
-        height: 60px; /* Reduz a logo para telas menores */
+        height: 60px;
         max-width: 140px;
     }
 }
+
 .home {
     position: relative;
     width: 100%;

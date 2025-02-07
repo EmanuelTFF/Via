@@ -391,6 +391,7 @@ html {
     .nav img {
         height: 60px;
         max-width: 140px;
+        margin-left: 10px;
     }
 }
 

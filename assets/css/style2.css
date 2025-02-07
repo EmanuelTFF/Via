@@ -284,15 +284,22 @@ html {
 
 .nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Mantém a logo e os itens bem distribuídos */
     align-items: center;
-    height: 60px;
-    /* 🔹 Ajuste da altura */
+
 }
 
 .nav__menu {
     display: flex;
     align-items: center;
+}
+
+.nav img {
+    height: 80px; /* Ajuste conforme necessário */
+    width: auto; /* Mantém a proporção correta */
+    max-width: 180px; /* Evita que a logo fique muito grande */
+    object-fit: contain; /* Evita distorção */
+    display: block;
 }
 
 .nav__list {
@@ -334,7 +341,7 @@ html {
         height: 100vh;
         background: white;
         flex-direction: column;
-        padding: 20px;
+        top: -20px;
         box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
         transition: right 0.3s;
     }
@@ -364,12 +371,18 @@ html {
         /* 🔹 Sempre escuro */
         cursor: pointer;
     }
+    .nav img {
+        height: 60px; /* Reduz a logo para telas menores */
+        max-width: 140px;
+    }
 }
 .home {
     position: relative;
     width: 100%;
     height: 80vh;
     overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 
 .home__carousel {
@@ -385,6 +398,7 @@ html {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     transition: opacity 1s ease-in-out;
     opacity: 0;
 }
@@ -396,8 +410,37 @@ html {
 .home__container {
     position: relative;
     z-index: 2;
-    text-align: center;
     color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 50%; /* Mantém um limite de largura */
+    align-items: flex-start; /* Move os itens para a esquerda */
+    text-align: left; /* Garante que o texto fique alinhado à esquerda */
+}
+.home__data {
+    text-align: left; /* Garante que o texto fique alinhado à esquerda */
+    align-self: flex-start; /* Move o bloco para a esquerda */
+    margin-left: 0; /* Remove qualquer margem extra */
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .home {
+        height: 60vh; /* Reduz um pouco a altura em telas menores */
+    }
+
+    .home__container {
+        width: 90%;
+        max-width: 100%;
+        padding: 15px;
+    }
+    .home__data {
+        text-align: left; /* Garante que o texto fique alinhado à esquerda */
+        align-self: flex-start; /* Move o bloco para a esquerda */
+        margin-left: 0; /* Remove qualquer margem extra */
+        margin-top: 120px;
+    }
 }
 
 .button:hover {
